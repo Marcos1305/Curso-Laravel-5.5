@@ -14,7 +14,10 @@
     <div class="box">
         <div class="box-header">
         <a href="{{route('balance.deposito')}}" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Recarregar</a>
-            <a href="" class="btn btn-danger"><i class="fas fa-cart-arrow-down"></i> Sacar</a>
+            @if($amount > 0)
+                <a href="{{route('balance.withdraw')}}" class="btn btn-danger"><i class="fas fa-cart-arrow-down"></i> Sacar</a>
+                <a href="{{route('balance.transfer')}}" class="btn btn-info"><i class="fas fa-exchange-alt"></i> Transferir</a>
+            @endif
         </div>
         <div class="box-body">
             @include('admin.includes.alerts')
