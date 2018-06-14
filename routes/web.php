@@ -6,12 +6,13 @@ Route::group(['middleware' => ['auth'], 'namespace' => 'Admin', 'prefix' => 'adm
     Route::post('withdraw', 'BalanceController@withdrawStore')->name('withdraw.store');
     
     //DESPOSITAR
-    Route::post('deposit', 'BalanceController@depositStore')->name('deposit .store');
+    Route::post('deposit', 'BalanceController@depositStore')->name('deposit.store');
     Route::get('deposit', 'BalanceController@deposit')->name('balance.deposito');
     
     //TRANSFERIR
     Route::get('transfer', 'BalanceController@transfer')->name('balance.transfer');
     Route::post('confirm-transfer', 'BalanceController@confirmTransfer')->name('confirm.transfer');
+    Route::post('transfer', 'BalanceController@transferStore')->name('transfer.store');
     
     //INDEX
     Route::get('balance', 'BalanceController@index')->name('admin.balance');
