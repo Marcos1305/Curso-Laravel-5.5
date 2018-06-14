@@ -122,7 +122,7 @@ return [
                 [
                     'text'  => 'Saldo',
                     'url'   => 'admin/balance',
-                    'icon'  => 'credit-card-alt'
+                    'icon'  => 'money-check-alt'
                 ],
                 [
                     'text'  => 'Histórico',
