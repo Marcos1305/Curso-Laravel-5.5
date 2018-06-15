@@ -3,7 +3,7 @@
 @section('content')
 <h1>Meu Perfil</h1>
 @include('admin.includes.alerts')
-<form action="{{route('profile.update')}}" method="post">
+<form action="{{route('profile.update')}}" method="post" enctype="multipart/form-data">
     {!! csrf_field() !!}
     <div class="form-group">
         <label for="name">Nome</label>
@@ -18,6 +18,9 @@
         <input class="form-control" type="password" name="password" placeholder="Senha">
     </div>
     <div class="form-group">
+        @if(auth()->user()->image != null)
+    <img src="{{url('storage/users/'.auth()->user()->image)}}" alt="{{auth()->user()->name}}">
+        @endif
         <label for="image">Imagem:</label>
         <input class="form-control" type="file" name="image">
     </div>
